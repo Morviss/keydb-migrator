@@ -75,6 +75,6 @@ func (m *Migrator) GetKeys(ctx context.Context) ([]string, error) {
 	for iter.Next(ctx) {
 		keys = append(keys, iter.Val())
 	}
-
 	return keys, nil
 }
+
