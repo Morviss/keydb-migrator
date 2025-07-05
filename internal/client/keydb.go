@@ -104,6 +104,11 @@ func (k *KeyDBClient) Expire(ctx context.Context, key string, expiration time.Du
 	return k.client.Expire(ctx, key, expiration)
 }
 
+// Exists checks if a key exists
+func (k *KeyDBClient) Exists(ctx context.Context, keys ...string) *redis.IntCmd {
+	return k.client.Exists(ctx, keys...)
+}
+
 // Close closes the connection
 func (k *KeyDBClient) Close() error {
 	return k.client.Close()
